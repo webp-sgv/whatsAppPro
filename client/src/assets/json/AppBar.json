@@ -4,6 +4,7 @@
         "logo": "../../assets/gears_allow_white.svg",
         "list_to": [
             {
+                "title": "Recursos",
                 "to": "/layout",
                 "rel": "noopener noreferrer",
                 "variant": "text",

@@ -12,26 +12,41 @@
         </template>
       </suspense>
       Wpp - Pro
-
     </v-app-bar-title>
 
     <template v-slot:append>
+
+      <Suspense>
+        <template #default>
+
+          <v-btn v-for="key, i in itemsAppBar[0].list_to" :key="i" :to="key.to" :rel="key.rel" :variant="key.variant">
+            <v-icon :icon="key.icon" :size="key.size" start />
+            {{ key.title }}
+          </v-btn>
+          
+        </template>
+        <template #fallback>
+          Aguarde...
+        </template>
+      </Suspense>
+
       
-      <v-btn to="/layout" rel="noopener noreferrer" variant="text">
-        <v-icon icon="mdi-view-dashboard" size="large" start />
-        Recursos
+      <v-btn to="/account" rel="" variant="text">
+        <v-icon icon="mdi-account" size="larger" start />
+        Acessar
       </v-btn>
 
     </template>
   </v-app-bar>
-  
 </template>
 
 <script>
-  import jsonDefaultAppBar from '@/assets/json/AppBar.json';
-  export default {
-    data: {
-      ret
-    }
-  }
-</scrip
+
+import jsonDefaultAppBar from '@/assets/json/AppBar.json';
+
+export default {
+  data: () => ({
+    itemsAppBar: jsonDefaultAppBar
+  }),
+}
+</script>
