@@ -1,0 +1,15 @@
+[
+    {
+        "title": "Wpp - Pro",
+        "logo": "../../assets/gears_allow_white.svg",
+        "list_to": [
+            {
+                "to": "/layout",
+                "rel": "noopener noreferrer",
+                "variant": "text",
+                "icon": "mdi-view-dashboard",
+                "icon_size": "large"
+            }
+        ]
+    }
+]
