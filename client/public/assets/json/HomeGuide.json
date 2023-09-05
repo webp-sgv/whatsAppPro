@@ -1,0 +1,50 @@
+[
+    {
+        "img_logo": "@/assets/logo_complete.svg",
+        "img_logo_height": 280,
+        "title": "Bem-Vindo",
+        "sub_title": "Made in Brazil",
+        "flag": "../assets/img/svg/bandeira_brazil.svg",
+        "list_btn": [
+            {
+                "title": "Recursos",
+                "color": "white",
+                "to": "/layout",
+                "min_width": 164,
+                "rel": "noopener noreferrer",
+                "size_btn": "large",
+                "target": "_blank",
+                "variant": "text",
+                "icon": "mdi-view-dashboard",
+                "size": "large",
+                "cols": "auto"
+            },
+            {
+                "title": "Começar",
+                "color": "primary",
+                "to": "/start",
+                "min_width": 228,
+                "rel": "noopener noreferrer",
+                "size_btn": "x-large",
+                "target": "_blank",
+                "variant": "flat",
+                "icon": "mdi-play",
+                "size": "large",
+                "cols": "auto"
+            },
+            {
+                "title": "Ajuda",
+                "color": "white",
+                "to": "/about",
+                "min_width": 164,
+                "rel": "noopener noreferrer",
+                "size_btn": "large",
+                "target": "_blank",
+                "variant": "text",
+                "icon": "mdi-account-group",
+                "size": "large",
+                "cols": "auto"
+            }
+        ]
+    }
+]

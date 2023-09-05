@@ -1,69 +1,53 @@
 <template>
-
   <suspense>
-    <template #default>
-      <v-container class="fill-height">
+    <v-container class="fill-height">
 
-        <v-responsive class="align-center text-center fill-height">
+      <v-responsive class="align-center text-center fill-height">
 
-          <v-img height="300" src="@/assets/logo_complete.svg" />
+        <v-img :height="dataJson[0].img_logo_height" :src="dataJson[0].img_logo" />
 
-          <div class="text-body-2 font-weight-light mb-n1 text-center">
-            <h1 class="text-h2 text-truncate font-weight-bold text-title">Bem-Vindo</h1>
-          </div>
+        <div class="text-body-2 font-weight-light mb-n1 text-center">
+          <h1 class="text-h2 text-truncate font-weight-bold text-title">{{ dataJson[0].title }}</h1>
+        </div>
 
-          <h1 class="text-h4 font-weight-bold text-subtitle">Made in Brazil</h1>
+        <h1 class="text-h4 font-weight-bold text-subtitle">{{ dataJson[0].sub_title }}</h1>
 
-          <v-avatar image="@/assets/img/svg/bandeira_brazil.svg"></v-avatar>
+        <v-avatar :image="dataJson[0].flag"></v-avatar>
 
-          <div class="py-14" />
+        <div class="py-14" />
 
-          <v-row class="d-flex align-center justify-center">
-            <v-col cols="auto">
+        <v-row class="d-flex align-center justify-center">
 
-              <v-btn to="/layout" min-width="164" rel="noopener noreferrer" target="_blank" variant="text">
-                <v-icon icon="mdi-view-dashboard" size="large" start />
+          <v-col v-for="(key, i) in dataJson[0].list_btn" :key="i" :cols="key.cols">
 
-                Recursos
-              </v-btn>
-            </v-col>
+            <v-btn :color="key.color" :to="key.to" :min-width="key.min_width" :rel="key.rel" :target="key.target" :variant="key.variant">
+              <v-icon :icon="key.icon" :size="key.size" start />
 
-            <v-col cols="auto">
-              <v-btn color="primary" to="/start" min-width="228" rel="noopener noreferrer" size="x-large" target="_blank"
-                variant="flat">
-                <v-icon icon="mdi-play" size="large" start />
+              {{ key.title }}
+            </v-btn>
 
-                Começar
-              </v-btn>
-            </v-col>
+          </v-col>
 
-            <v-col cols="auto">
-              <v-btn to="/about" min-width="164" rel="noopener noreferrer" target="_blank" variant="text">
-                <v-icon icon="mdi-account-group" size="large" start />
+        </v-row>
 
-                Ajuda
-              </v-btn>
-            </v-col>
-          </v-row>
-
-        </v-responsive>
-
-      </v-container>
-    </template>
+      </v-responsive>
+    </v-container>
     <template #fallback>
-      <v-container>
-        <v-skeleton-loader :loading="true" height="300" type="image, list-item-two-line"
-          color="transparent"></v-skeleton-loader>
-      </v-container>
+      Aguarde...
     </template>
+    
   </suspense>
-
+  
 </template>
 
 <script>
 
+// FILE JSON
+import FileJsonHomeGuide from '@/assets/json/HomeGuide.json';
 
 export default {
-  
+  data: () => ({
+    dataJson: FileJsonHomeGuide
+  }),
 }
 </script>

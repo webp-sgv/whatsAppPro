@@ -19,7 +19,7 @@
       <Suspense>
         <template #default>
 
-          <v-btn v-for="key, i in itemsAppBar[0].list_to" :key="i" :to="key.to" :rel="key.rel" :variant="key.variant">
+          <v-btn v-for="key, i in itemsAppBar[0].list_to" :key="i" :to="key.to" :rel="key.rel" :variant="key.variant" class="ml-2">
             <v-icon :icon="key.icon" :size="key.size" start />
             {{ key.title }}
           </v-btn>
@@ -30,13 +30,13 @@
         </template>
       </Suspense>
 
-      
-      <v-btn to="/account" rel="" variant="text">
+      <v-btn to="/account" rel="" variant="flat" class="ml-2" color="white">
         <v-icon icon="mdi-account" size="larger" start />
         Acessar
       </v-btn>
 
     </template>
+
   </v-app-bar>
 </template>
 

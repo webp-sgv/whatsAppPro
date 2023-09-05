@@ -5,9 +5,10 @@
  */
 
 // Styles
-import '@mdi/font/css/materialdesignicons.css'
-import 'vuetify/styles'
-import { VSkeletonLoader } from 'vuetify/labs/VSkeletonLoader'
+import '@mdi/font/css/materialdesignicons.css';
+import 'vuetify/styles';
+import { VSkeletonLoader } from 'vuetify/labs/VSkeletonLoader';
+import { VStepper } from 'vuetify/labs/VStepper';
 
 // Composables
 import { createVuetify } from 'vuetify';
@@ -63,6 +64,7 @@ export default createVuetify(
     },
     components: {
       VSkeletonLoader,
+      VStepper
     },
   },
   

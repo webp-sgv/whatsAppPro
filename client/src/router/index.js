@@ -1,6 +1,9 @@
 // Composables
 import { createRouter, createWebHistory } from 'vue-router'
 
+// Json
+import InfoAppJson from '@/assets/json/AppInfo.json';
+
 const routes = [
   {
     path: '/',
@@ -8,10 +11,7 @@ const routes = [
     children: [
       {
         path: '',
-        name: 'Home',
-        // route level code-splitting
-        // this generates a separate chunk (about.[hash].js) for this route
-        // which is lazy-loaded when the route is visited.
+        name: `Início | ${InfoAppJson[0].app_name_tab}`,
         component: () => import(/* webpackChunkName: "home" */ '@/views/Home.vue'),
       },
     ],
@@ -22,11 +22,41 @@ const routes = [
     children: [
       {
         path: '',
-        name: 'LSayout',
-        // route level code-splitting
-        // this generates a separate chunk (about.[hash].js) for this route
-        // which is lazy-loaded when the route is visited.
+        name: `Modelos | ${InfoAppJson[0].app_name_tab}`,
         component: () => import(/* webpackChunkName: "home" */ '@/views/Layout.vue'),
+      },
+    ],
+  },
+  {
+    path: '/account',
+    component: () => import('@/layouts/default/DefaultNotBar.vue'),
+    children: [
+      {
+        path: '',
+        name: `Conta | ${InfoAppJson[0].app_name_tab}`,
+        component: () => import(/* webpackChunkName: "home" */ '@/views/Account.vue'),
+      },
+    ],
+  },
+  {
+    path: '/register',
+    component: () => import('@/layouts/default/DefaultNotBar.vue'),
+    children: [
+      {
+        path: '',
+        name: `Criar conta | ${InfoAppJson[0].app_name_tab}`,
+        component: () => import(/* webpackChunkName: "home" */ '@/views/Account.vue'),
+      },
+    ],
+  },
+  {
+    path: '/help',
+    component: () => import('@/layouts/default/Default.vue'),
+    children: [
+      {
+        path: '',
+        name: `Ajuda | ${InfoAppJson[0].app_name_tab}`,
+        component: () => import(/* webpackChunkName: "home" */ '@/views/Account.vue'),
       },
     ],
   },
@@ -35,6 +65,11 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
-})
+});
+
+router.beforeEach((to, from, next) => {
+  document.title = to.name;
+  next();
+});
 
 export default router

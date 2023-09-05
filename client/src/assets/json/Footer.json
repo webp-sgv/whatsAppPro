@@ -1,0 +1,56 @@
+[
+    {
+       "list_link": [
+        {
+            "title": "Início",
+            "color": "white",
+            "variant": "text",
+            "class": "mx-2 mb-2 mt-2",
+            "rounded": "xl",
+            "icon": "",
+            "icon_color": "",
+            "icon_size": "small"
+        },
+        {
+            "title": "Sobre",
+            "color": "white",
+            "variant": "text",
+            "class": "mx-2 mb-2 mt-2",
+            "rounded": "xl",
+            "icon": "",
+            "icon_color": "",
+            "icon_size": "small"
+        },
+        {
+            "title": "Time",
+            "color": "white",
+            "variant": "text",
+            "class": "mx-2 mb-2 mt-2",
+            "rounded": "xl",
+            "icon": "",
+            "icon_color": "",
+            "icon_size": "small"
+        },
+        {
+            "title": "Modelos",
+            "color": "white",
+            "variant": "text",
+            "class": "mx-2 mb-2 mt-2",
+            "rounded": "xl",
+            "icon": "",
+            "icon_color": "",
+            "icon_size": "small"
+        },
+        {
+            "title": "Status",
+            "color": "white",
+            "variant": "text",
+            "class": "mx-2 mb-2 mt-2",
+            "rounded": "xl",
+            "icon": "mdi-circle",
+            "icon_color": "success",
+            "icon_size": "small"
+        }
+       ] 
+    }
+]
